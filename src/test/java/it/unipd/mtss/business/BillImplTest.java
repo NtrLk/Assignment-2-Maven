@@ -96,4 +96,15 @@ public class BillImplTest {
             assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
         }  
     }
+
+    @Test
+    public void testStessoNumeroMouseTastiere() {
+    	 BillImpl meinn = new BillImpl();
+    	 
+    	try {
+			assertEquals(20.00, meinn.getOrderPrice(ArticoliOrdinati2, new Cliente(20,"a","b","Roma")), 0.00);
+		} catch (BillException e) {
+			 assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
+		}
+    }
 }
