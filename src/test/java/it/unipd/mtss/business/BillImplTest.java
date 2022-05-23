@@ -58,4 +58,21 @@ public class BillImplTest {
               assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
           }
         }
+      
+      // test in cui vengono ordinati più di 10 mouse e testo il return della funzione
+      @Test
+      public void testItemsOrderedPiuDi10Mouse() {
+          for (int i = 0; i < 10; i++) {
+              ArticoliOrdinati2.add(new Articolo("Mouse", 10.0));
+          }
+          ArticoliOrdinati2.add(new Articolo("Mouse", 5.0));
+          BillImpl meinn = new BillImpl();
+          try {
+              // visto il come ho costruito la lista di articoli, il valore che mi aspetto,
+              // considerando lo sconto è di 130.00
+              assertEquals(130.00, meinn.getOrderPrice(ArticoliOrdinati2, new Cliente(20, "Marco", "Verdi", "Roma")), 0.00);
+          } catch (BillException e) {
+              assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
+          }  
+      }
 }
