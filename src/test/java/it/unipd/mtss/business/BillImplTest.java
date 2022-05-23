@@ -99,10 +99,17 @@ public class BillImplTest {
 
     @Test
     public void testStessoNumeroMouseTastiere() {
+        List<Articolo> ArticoliOrdinati6 = new ArrayList<Articolo>();
+        for (int i = 0; i < 2; i++) {
+            ArticoliOrdinati6.add(new Articolo("Mouse", 10.0));
+            ArticoliOrdinati6.add(new Articolo("Tastiere", 10.0));
+        }
+        ArticoliOrdinati6.add(new Articolo("Mouse", 5.0));
+        ArticoliOrdinati6.add(new Articolo("Tastiere", 10.0));
     	 BillImpl meinn = new BillImpl();
     	 
     	try {
-			assertEquals(20.00, meinn.getOrderPrice(ArticoliOrdinati2, new Cliente(20,"a","b","Roma")), 0.00);
+			assertEquals(50.00, meinn.getOrderPrice(ArticoliOrdinati6, new Cliente(20,"a","b","Roma")), 0.00);
 		} catch (BillException e) {
 			 assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
 		}
