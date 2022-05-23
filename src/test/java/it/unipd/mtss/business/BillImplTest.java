@@ -23,6 +23,8 @@ public class BillImplTest {
     List<Articolo> ArticoliOrdinati;
     List<Articolo> ArticoliOrdinati2;
     List<Articolo> ArticoliOrdinati3;
+    
+    
 
     @Before
     public void setUp() throws Exception {
@@ -62,15 +64,16 @@ public class BillImplTest {
     // test in cui vengono ordinati 5 processori e testo il return della funzione
     @Test
     public void testItemsOrderedPiuDi5Processori() {
+        List<Articolo> ArticoliOrdinati4 = new ArrayList<Articolo>();
         for (int i = 0; i < 5; i++) {
-            ArticoliOrdinati2.add(new Articolo("Processori", 10.0));
+            ArticoliOrdinati4.add(new Articolo("Processori", 10.0));
         }
-        ArticoliOrdinati2.add(new Articolo("Processori", 5.0));
+        ArticoliOrdinati4.add(new Articolo("Processori", 5.0));
         BillImpl meinn = new BillImpl();
         try {
             // visto il come ho costruito la lista di articoli, il valore che mi aspetto,
             // considerando lo sconto è di 72.50
-            assertEquals(72.50, meinn.getOrderPrice(ArticoliOrdinati2, new Cliente(20, "Marco", "Verdi", "Roma")), 0.00);
+            assertEquals(52.50, meinn.getOrderPrice(ArticoliOrdinati4, new Cliente(20, "Marco", "Verdi", "Roma")), 0.00);
         } catch (BillException e) {
             assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
         }

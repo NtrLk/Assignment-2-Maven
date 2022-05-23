@@ -83,6 +83,10 @@ public class BillImpl implements Bill {
 					}
 					
 				}
+
+				if(numeroProcessori > 5) {
+					importo = importo - (menoCaroProcessori / 2);
+				}
 			}
 		}
 		else
