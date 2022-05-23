@@ -133,4 +133,19 @@ public class BillImplTest {
             assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
         }
     }
+    @Test
+    public void testImportoMinoreDiDieci() {
+    	List<Articolo> prova = new ArrayList<Articolo>();
+    	prova.add(new Articolo("Tastiere",1.00));
+    	prova.add(new Articolo("Tastiere",1.00));
+    	prova.add(new Articolo("Tastiere",1.00));
+    	double importo = 0.00;
+    	
+    	for(Articolo a : prova)
+    	{
+    		importo += a.getPrezzo();
+    	}
+    	
+    	assertTrue(importo < 10);
+    }
 }
