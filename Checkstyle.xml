@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE module PUBLIC "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+"http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+
+<module name="Checker">
+	<module name="Header">
+	  <property name="headerFile" value="header.txt"/>
+	</module>
+	
+  <module name="TreeWalker">
+	<module name="AvoidStarImport"/> <!-- non va pi+ -->
+	<module name="BooleanExpressionComplexity">
+  	<property name="max" value="5"/> 
+    </module>
+	
+    <module name="CyclomaticComplexity">
+	<property name="max" value="25"/>
+	<property name="tokens" value="LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_CASE, LITERAL_CATCH, QUESTION, LAND, LOR"/>
+	</module>
+    
+    <module name="MethodLength">
+	<property name="tokens" value="METHOD_DEF"/>
+	  <property name="max" value="200"/>
+	</module>
+	
+	<module name="EmptyCatchBlock">
+	  <property name="commentFormat" value="// Va bene"/>
+	  <property name="exceptionVariableName" value="expected|ignore|e"/>
+	</module>
+	
+	<module name="IllegalImport"/>  
+	<module name="NeedBraces"/>
+	
+    
+  </module>
+  
+  <module name="FileLength">
+  <property name="max" value="1500"/>
+  </module>
+
+  <module name="LineLength">
+  <property name="max" value="200"/>
+  </module>
+  
+</module>	

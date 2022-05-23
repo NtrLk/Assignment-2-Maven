@@ -1,0 +1,13 @@
+////////////////////////////////////////////////////////////////////
+// [Raul] [Seganfreddo] [1226293] 
+// [Saad] [Mounib] [2052815] 
+////////////////////////////////////////////////////////////////////
+
+package it.unipd.mtss.model;
+
+public interface User {
+	String getNome();
+	String getCognome();
+	String getLuogoNascita();
+	int getAge();
+}
