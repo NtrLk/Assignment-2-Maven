@@ -30,7 +30,6 @@ public class BillImpl implements Bill {
 			}				
 			else {
 				
-				
 				int numeroProcessori = 0;
 				int numeroMouse = 0;
 				int numeroTastiere = 0;
@@ -94,3 +93,7 @@ public class BillImpl implements Bill {
 		return importo;
 	}
 }
+
+// commento per la issue 1 : la issue 1 è compresa nella issue 6 
+// (che necessariamente andava fatta per prima per poter gestire la eccezione), quindi non 
+// viene fatta una modifica sostanziale al codice per chiudere la issue 1.
