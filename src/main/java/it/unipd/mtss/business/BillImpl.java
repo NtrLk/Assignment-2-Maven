@@ -95,6 +95,10 @@ public class BillImpl implements Bill {
 				if(numeroTastiere == numeroMouse) {
 					importo -= menoCaroMouse;
 				}
+				if(importo > 1000)
+				{
+					importo -= (importo * 10) / 100;
+				}
 			}
 		}
 		else
