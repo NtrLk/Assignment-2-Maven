@@ -114,4 +114,20 @@ public class BillImplTest {
 			 assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
 		}
     }
+ // test in cui l'importo totale dell'ordine è maggiore di 1000 euro e testo il return della funzione
+    @Test
+    public void testImportoMaggioreDiMille() {
+        for (int i = 0; i < 10; i++) {
+            ArticoliOrdinati2.add(new Articolo("Mouse", 100.0));
+        }
+        BillImpl meinn = new BillImpl();
+        try {
+            // visto il come ho costruito la lista di articoli, il valore che mi aspetto,
+            // considerando lo sconto del 10% effettuato, è di 918.00 (a partire dai 1020.0
+            // di importo non scontato)
+            assertEquals(918, meinn.getOrderPrice(ArticoliOrdinati2, new Cliente(20, "Marco", "Verdi", "Roma")), 0.00);  
+        } catch (BillException e) {
+            assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
+        }
+    }
 }
