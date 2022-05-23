@@ -10,11 +10,7 @@ import java.util.ArrayList;
 
 import it.unipd.mtss.model.Articolo;
 import it.unipd.mtss.model.Cliente;
-import it.unipd.mtss.model.EItem;
-import it.unipd.mtss.model.User;
-import it.unipd.mtss.model.Ordine;
 
-import it.unipd.mtss.business.BillImpl;
 import it.unipd.mtss.business.exeption.BillException;
 
 

@@ -12,7 +12,6 @@ import it.unipd.mtss.model.Articolo;
 import it.unipd.mtss.model.Articolo.itemType;
 import it.unipd.mtss.business.exeption.BillException;
 import it.unipd.mtss.model.Cliente;
-import it.unipd.mtss.model.Ordine;
 
 public class BillImpl implements Bill {
 	public BillImpl() {}
