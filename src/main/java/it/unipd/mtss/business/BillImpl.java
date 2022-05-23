@@ -99,6 +99,9 @@ public class BillImpl implements Bill {
 				{
 					importo -= (importo * 10) / 100;
 				}
+				if(importo < 10) {
+					importo += 2;
+				}
 			}
 		}
 		else
