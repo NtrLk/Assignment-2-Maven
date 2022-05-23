@@ -92,6 +92,10 @@ public class BillImpl implements Bill {
 				if(numeroMouse > 10) {
 					importo -= menoCaroMouse;
 				}
+
+				if(numeroTastiere == numeroMouse) {
+					importo -= menoCaroMouse;
+				}
 			}
 		}
 		else
