@@ -58,4 +58,21 @@ public class BillImplTest {
               assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
           }
         }
+
+    // test in cui vengono ordinati 5 processori e testo il return della funzione
+    @Test
+    public void testItemsOrderedPiuDi5Processori() {
+        for (int i = 0; i < 5; i++) {
+            ArticoliOrdinati2.add(new Articolo("Processori", 10.0));
+        }
+        ArticoliOrdinati2.add(new Articolo("Processori", 5.0));
+        BillImpl meinn = new BillImpl();
+        try {
+            // visto il come ho costruito la lista di articoli, il valore che mi aspetto,
+            // considerando lo sconto è di 72.50
+            assertEquals(72.50, meinn.getOrderPrice(ArticoliOrdinati2, new Cliente(20, "Marco", "Verdi", "Roma")), 0.00);
+        } catch (BillException e) {
+            assertEquals("Non e' possibile ordinare piu' di 30 articoli.", e.getMessage());
+        }
+    }
 }
